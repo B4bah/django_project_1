@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Advertisements(models.Model):
+
     title = models.CharField(
         verbose_name='Title',
         help_text='Field for products name',
@@ -21,3 +22,6 @@ class Advertisements(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'<Advertisement: Advertisement(id={self.id}, title={self.title}, price={self.price:.2f})>'
