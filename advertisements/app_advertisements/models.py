@@ -25,3 +25,7 @@ class Advertisements(models.Model):
 
     def __str__(self):
         return f'<Advertisement: Advertisement(id={self.id}, title={self.title}, price={self.price:.2f})>'
+
+
+class Meta:
+    db_table = 'advertisements'
