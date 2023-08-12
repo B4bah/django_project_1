@@ -35,7 +35,7 @@ class Advertisement(models.Model):
         return self.created_at.strftime("%d.%m.%Y at %H:%M:%S")
 
     @admin.display(description='Last updated')
-    def updeted_date(self):
+    def updated_date(self):
         if self.updated_at.date() == timezone.now().date():
             updated_time = self.updated_at.strftime('%H:%M:%S')
             return format_html(
