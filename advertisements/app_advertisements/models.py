@@ -36,6 +36,7 @@ class Advertisement(models.Model):
         verbose_name="Auction",
         default=False
     )
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
