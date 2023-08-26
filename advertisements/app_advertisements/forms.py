@@ -6,7 +6,7 @@ class AdvertisementForm(forms.ModelForm):
     class Meta:
         model = Advertisement
         fields = ['title', 'description', 'price', 'auction', 'image']
-    widgets = {
+        widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
             'price': forms.NumberInput(attrs={'class': 'form-control'}),
@@ -14,8 +14,8 @@ class AdvertisementForm(forms.ModelForm):
             'image': forms.FileInput(attrs={'class': 'form-control-file'}),
         }
 
-    # title = forms.CharField(max_length=60)
-    # description = forms.CharField(widget=forms.Textarea)
-    # price = forms.DecimalField()
-    # auction = forms.BooleanField(required=False)
-    # image = forms.ImageField()
+    def clean_title(self):
+        title = self.cleaned_data.get('title')
+        if title.startswith('?'):
+            raise forms.ValidationError("Title cannot start with a question mark")
+        return title
