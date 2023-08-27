@@ -27,23 +27,31 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{% url 'register' %}">
-      <span style="font-weight: bold;">Регистрация</span>
+    {% if not user.is_authenticated %}
+      <a class="nav-link" href="{% url 'register' %}">
+        <span style="font-weight: bold;">Регистрация</span>
+    {% endif %}
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{% url 'login' %}">
-      <span style="font-weight: bold;">Войти</span>
+    {% if not user.is_authenticated %}
+      <a class="nav-link" href="{% url 'login' %}">
+        <span style="font-weight: bold;">Войти</span>
+    {% endif %}
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{% url 'profile' %}">
-      <span style="font-weight: bold;">Профиль</span>
+    {% if user.is_authenticated %}
+      <a class="nav-link" href="{% url 'profile' %}">
+        <span style="font-weight: bold;">Профиль</span>
+    {% endif %}
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{% url 'logout' %}">
-      <span style="font-weight: bold;">Выйти</span>
+    {% if user.is_authenticated %}
+      <a class="nav-link" href="{% url 'logout' %}">
+        <span style="font-weight: bold;">Выйти</span>
+    {% endif %}
     </a>
   </li>
 </ul>
