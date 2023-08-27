@@ -1,53 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/fontello.css">
-  <title>Advertisement</title>
-</head>
+{% block title %}
+Главная
+{% endblock %}
 
-<body>
-  <ul class="nav nav-pills sticky-top bg-white nav-fill">
-    <li class="nav-item">
-      <a class="nav-link" href="index.html">
-        <span style="font-weight: bold;">Главная</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="top-sellers.html"><span style="font-weight: bold;">Топ продавцов</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="advertisement-post.html">
-        <span style="font-weight: bold;">Разместить объявление</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="register.html">
-        <span style="font-weight: bold;">Регистрация</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="login.html">
-        <span style="font-weight: bold;">Войти</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="profile.html">
-        <span style="font-weight: bold;">Профиль</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <span style="font-weight: bold;">Выйти</span>
-      </a>
-    </li>
-  </ul>
+{% block content %}
 
   <div class="container" style="margin: 50px;">
     <div class="display-2">
@@ -68,15 +26,6 @@
               <a href="#" class="nav-link"><strong>Продам гараж</strong></a>
             </h5>
             <p class="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit eum aut commodi dolores
-              praesentium fugiat! Maxime perspiciatis iste, voluptas tenetur voluptatem at beatae, aliquid
-              libero odit ab accusamus tempore assumenda.
-              Hic asperiores pariatur recusandae sapiente doloremque illo laudantium placeat sed fugit!
-              Dolorem nulla quaerat doloremque odit impedit unde esse dolorum tenetur quos error! Iure
-              quas, illo expedita sed suscipit ullam.
-              Illo quam odio, quas laborum natus error doloremque totam maiores dolorum fugit aliquam, sit
-              numquam impedit praesentium facilis amet perspiciatis facere rem magnam consectetur, nobis
-              est. Qui quod fuga illum.
             </p>
             <span>Автор: "username"</span>
             <p class="card-text"><small class="text-muted">Размещено: "дата"</small></p>
@@ -117,6 +66,4 @@
     </nav>
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+{% endblock %}

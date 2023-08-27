@@ -19,3 +19,5 @@ class AdvertisementForm(forms.ModelForm):
         if title.startswith('?'):
             raise forms.ValidationError("Title cannot start with a question mark")
         return title
+
+
